@@ -1,13 +1,18 @@
-import React from "react";
+import React from 'react'
+import CategoryFilter from './CategoryFilter'
 
-function Task() {
+function Task(props) {
+  const { text, category, removeTask } = props
+
   return (
-    <div className="task">
-      <div className="label">CATEGORY HERE</div>
-      <div className="text">TEXT HERE</div>
-      <button className="delete">X</button>
+    <div className='task'>
+      <div className='label'>{category}</div>
+      <div className='text'>{text}</div>
+      <button className='delete' onClick={() => removeTask(text)}>
+        Delete
+      </button>
     </div>
-  );
+  )
 }
 
-export default Task;
+export default Task
